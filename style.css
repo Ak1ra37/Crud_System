@@ -1,0 +1,57 @@
+/* ============================================
+   ARQUIVO: css/style.css
+   REQUISITO: 4 (Customização via Cookies)
+   O QUE FAZ: Tema claro/escuro controlado pela classe no <body>.
+   ============================================ */
+
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+/* Cores do tema CLARO (padrão) */
+:root {
+    --fundo: #f4f4f9;
+    --texto: #333;
+    --card: #fff;
+    --borda: #ddd;
+    --primaria: #4f46e5;
+}
+
+/* Cores do tema ESCURO — aplicado quando <body> tem class="escuro" */
+body.escuro {
+    --fundo: #1e1e24;
+    --texto: #e1e1e6;
+    --card: #2b2b36;
+    --borda: #444;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    padding: 20px;
+    transition: background 0.3s;
+}
+
+/* Botões */
+.btn { padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; color: #fff; font-weight: bold; display: inline-block; }
+.btn-azul     { background: var(--primaria); }
+.btn-verde    { background: #10b981; }
+.btn-vermelho { background: #ef4444; }
+
+/* Navbar do topo */
+.navbar { background: var(--card); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+
+/* Card genérico (para login, cadastro e formulários) */
+.card { background: var(--card); padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+
+/* Campos de formulário */
+input, select, textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid var(--borda); border-radius: 5px; background: var(--fundo); color: var(--texto); }
+
+/* Tabela do admin */
+table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 8px; overflow: hidden; }
+th, td { padding: 12px; border-bottom: 1px solid var(--borda); text-align: left; }
+th { background: var(--fundo); }
+
+/* Grid da vitrine (cliente) */
+.grid-produtos { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+.produto-card { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid var(--borda); text-align: center; }
+.preco { color: #10b981; font-size: 1.2em; font-weight: bold; margin: 10px 0; }
